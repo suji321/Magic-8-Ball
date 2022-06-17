@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(
       MaterialApp(
@@ -30,12 +31,16 @@ class Ball extends StatefulWidget {
 }
 
 class _BallState extends State<Ball> {
+  int ballNumber = 1;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: FlatButton(
         onPressed: () {
-          print('I got clicked');
+          setState(() {
+            ballNumber = Random().nextInt(5);
+            print('I got clicked');
+          });
         },
         child: Image.asset('images/ball1.png'),
       ),
