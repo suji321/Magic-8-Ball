@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(
@@ -31,7 +33,12 @@ class _BallState extends State<Ball> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Image.asset('images/ball1.png'),
+      child: FlatButton(
+        onPressed: () {
+          print('I got clicked');
+        },
+        child: Image.asset('images/ball1.png'),
+      ),
     );
   }
 }
